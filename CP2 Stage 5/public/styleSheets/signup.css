@@ -1,0 +1,217 @@
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+    /* primary/main colors*/
+    --clr-primary-1: #247fff;
+    --clr-primary-2: #ffa600;
+    /* darker shades of primary colours*/
+    --clr-secondary-1: #006fb9;
+    --clr-secondary-4: #cc8400;
+    /*grey, white and black */
+    --clr-grey-1: #f5f5f5;
+    --clr-grey-2: #424242;
+    --clr-white: #fff;
+    --clr-black: #222;
+    /*other*/
+    --line: linear-gradient(to bottom, transparent 2px, #eaf0f6 1px, #eaf0f6 2px, transparent 3px);
+    --light-shadow: 0px 4px #eaf0f6;
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+
+
+    /*label colour*/
+    --label: #d9edf7;
+
+    /*Media Query stuff*/
+}
+
+/*
+=============== 
+Initial styling
+===============
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica, Tahoma, Arial, sans-serif;
+}
+
+body {
+    position: relative;
+    background-color: var(--clr-white);
+}
+
+/*
+============
+Form Styling
+============
+*/
+
+.mainform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 10vh;
+}
+
+h1{
+    color: var(--clr-black);
+    margin-bottom: 5vh;
+    padding-left: 10px;
+}
+a{
+    color: var(--clr-black);
+    padding-right: 10px;
+    float: right;
+    font-size: 85%;
+    position: relative;
+    top: -50px;
+}
+
+.signupbox{
+    margin-top: 40vh;
+    background-color: white;
+    width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+    border: 1px solid #337ab7;
+}
+
+
+label{
+    display: inline-block;
+    text-align: right;
+    color: var(--clr-secondary-1);
+    padding-top: 7px;
+    margin-bottom: 0;
+    margin-top: 15px;
+
+}
+
+/*text input field*/
+input{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: block;
+
+
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: var(--clr-white);
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+}
+
+.panel-body{
+    padding: 20px 40px;
+}
+
+.panel-heading{
+    width: 100%;
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    padding: 10px;
+}
+
+/*button styling*/
+
+.button-66 {
+    background-color: var(--clr-primary-1);
+    border-radius: 8px;
+    border: 0;
+    box-shadow: rgba(1, 60, 136, .5) 0 -1px 3px 0 inset, rgba(0, 44, 97, .1) 0 3px 6px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inherit;
+    font-family: "Space Grotesk", -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-top: 7vh;
+    min-height: 56px;
+    min-width: 120px;
+    padding: 16px 20px;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+.button-66:hover {
+    background-color: var(--clr-secondary-1);
+    transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+    .button-66 {
+        padding: 16px 44px;
+        min-width: 150px;
+    }
+}
+
+/*drop down styling*/
+select{
+    margin-top: 3vh;
+    margin-left: 4vh;
+    margin-right: 4vh;
+    background-color: white;
+    border: thin solid 555;
+    border-radius: 4px;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 1.5em 0.5em 1em;
+    font-size: 14px;
+    /* reset */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.alert-success{
+    color: green;
+    text-align: center;
+    justify-content: center;
+}
+.alert-danger{
+    color: red;
+    text-align: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 600px){
+    
+    .mainform{
+        margin-top: 15vh;
+    }
+
+    select{
+        margin-right: 0;
+        margin-left: 25px;
+        width: 80%;
+    }
+}
+
+
+

@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up For Athletes</title>
+  <link rel="stylesheet" href="../styleSheets/signup.css" />
+  <script>
+    function empty() {
+      var x;
+      x = document.getElementById("roll-input").value;
+      if (x == "") {
+        //alert("Please insert empty value");
+        return false;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="mainform">
+    <div class="signupbox">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h1>Athletes Sign Up</h1>
+          <div>
+            <a id="signinlink" href="/login">Sign In</a>
+          </div>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal" role="form" method="post" action="/signup" onClick="return empty()">
+            <% if (message.length> 0 && !message.includes("Error")) { %>
+              <div class="alert-success">
+                <%= message %>
+              </div>
+              <% } %>
+                <!--Error Displayed-->
+                <% if(message.includes("Error")){ %>
+                  <div class="alert-danger">
+                    <p>
+                      <%= message%>
+                    </p>
+                    <span></span>
+                  </div>
+                  <% } %>
+                    <div class="form-group">
+                      <label for="first_name">First Name</label>
+                      <div>
+                        <input type="text" name="first_name" placeholder="First Name" id="roll-input" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="last_name">Last Name</label>
+                      <div>
+                        <input type="text" name="last_name" placeholder="Last Name" />
+                      </div>
+                    </div>
+                    <!--Adding other data to the forum-->
+                    <div>
+                      <select for="gender" name="gender">
+                        <option value="">Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <select for="sport" name="sport">
+                        <option value="">Sport</option>
+                        <option value="Basketball">Basketball</option>
+                        <option value="Football">Football</option>
+                        <option value="Boxing">Boxing</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <select for="country" name="country">
+                        <option value="">Country</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="mob_no">Mobile Number</label>
+                      <div>
+                        <input type="number" name="mob_no" placeholder="Mobile Number" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="education">Current Academic Institute / Sport Club / N/A</label>
+                      <div>
+                        <input type="text" name="education" placeholder="University/College/School/Club" />
+                      </div>
+                    </div>
+                    <div>
+                      <label for="age">Age</label>
+                      <input type="number" name="age" placeholder="Current Age" />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <div>
+                        <input type="email" name="email" placeholder="Email Address" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="user_name">User Name</label>
+                      <div>
+                        <input type="text" name="user_name" placeholder="User Name" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <div>
+                        <input type="password" name="password" placeholder="Password" />
+                      </div>
+                    </div>
+                    <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+                    <!-- Button -->
+                    <div class="buttonPosition">
+                      <div class="g-recaptcha" data-sitekey="6Ld0L6wkAAAAACEo8fT7VQ2XYoiEDbbxeHwdz4Bx"></div>
+                      <br />
+                      <button type="submit" class="button-66">
+                        <i class="icon-hand-right"></i> &nbsp Sign Up
+                      </button>
+                    </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

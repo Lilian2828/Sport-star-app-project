@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel='stylesheet' href='/styleSheets/profile.css' />
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <!--Profile Picture-->
+            <div class="top">
+                <!--Display the image if the profile_image exists
+          "../upload/<%data[0].profile_image%>"
+        -->
+                <% if(data[0].profile_image !="" ){ %>
+                    <img src="../upload/<%=data[0].profile_image %>" alt="User Profile">
+                    <% }else{ %>
+                        <img src="../images/user.png" alt="User Profile">
+                        <% } %>
+                            <!--if the profile_image doesnt exists^-->
+                            <form action="/home/profile" method="post" encType="multipart/form-data">
+                                <label>Profile Image</label>
+                                <input class="choosefile" type="file" name="imageFile" accept="image/*" />
+                                <input type="submit" class="button-66" value="Upload">
+                            </form>
+            </div>
+            <!--User Details-->
+            <div class="label-container">
+                <div class="image-container"><img src="../images/nameIcon.png" alt="full name icon"></div>
+                <div class="text-container">
+                    <label>Full Name</label>
+                    <h3>
+                        <%=data[0].first_name%>
+                            <%=data[0].last_name%>
+                    </h3>
+                </div>
+            </div>
+            <!--Sport Club-->
+            <div class="label-container">
+                <div class="image-container"><img src="../images/sportIcon.png" alt="sport icon"></div>
+                <div class="text-container">
+                    <label>Sport Club</label>
+                    <h3>
+                        <%=data[0].sport_club%>
+                    </h3>
+                </div>
+            </div>
+
+            <!--Email-->
+            <div class="label-container">
+                <div class="image-container"><img src="../images/emailIcon.png" alt="email icon"></div>
+                <div class="text-container">
+                    <label>Email</label>
+                    <h3>
+                        <%=data[0].email%>
+                    </h3>
+                </div>
+            </div>
+            <!--Mobile number-->
+            <div class="label-container">
+                <div class="image-container"><img src="../images/phoneIcon.png" alt="phone icon"></div>
+                <div class="text-container">
+                    <label>Phone</label>
+                    <h3>
+                        <%=data[0].mob_no%>
+                    </h3>
+                </div>
+            </div>
+
+            <!--profile highlights video-->
+            <form action="/home/profile" method="post" encType="multipart/form-data">
+                <label>Highlight Video</label>
+                <input class="chooseVideoFile" type="file" name="videoFile" accept="video" />
+                <input type="submit" class="button-66" value="Upload">
+            </form>
+            <% if(data[0].profile_video !="" ){ %>
+                <video src="../upload/<%=data[0].profile_video %>" controls></video>
+                <% } %>
+        </div>
+    </div>
+</body>

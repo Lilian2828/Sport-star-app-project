@@ -1,0 +1,247 @@
+* {
+    margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: Helvetica, Tahoma, Arial, sans-serif;
+}
+
+body {
+  background-color: rgb(2, 95, 225);
+}
+
+h1{
+  color: #ffffff;
+}
+
+nav {
+width: 100%;
+height: 90px;
+background-color: rgb(240, 104, 13);
+line-height: 75px;
+padding: 0px 100px;
+position: fixed;
+z-index: 1;
+}
+
+nav img{
+size-adjust: 100px;
+position: absolute;
+left: 1px;
+bottom: -24px;
+}
+
+nav ul{
+  float: right;
+}
+
+nav ul li{
+  display: inline-block;
+  list-style: none;
+}
+
+nav ul li a{
+  color:#ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight:bolder;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+nav ul li a:hover{
+  color: #03fcf0;
+}
+
+nav .current{
+  color: #03fcf0;
+}
+
+/*Click on button and change happens */
+.checkbtn{
+  color: #03fcf0;
+  font-size: 25px;
+  cursor: pointer;
+  float:right;
+  display: none;
+}
+#check{
+  display: none;
+}
+
+@media screen and (max-width: 880px){
+  nav{
+      padding: 0px 50px;
+
+  }
+  .checkbtn{
+      display: block;
+  }
+  nav .logo p{
+      font-size: 30px;
+  }
+  nav ul{
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      position: fixed;
+      top: 85px;
+      left: -100%;
+      text-align: center;
+      transition: 0.4s ease;
+
+  }
+  nav ul li{
+      display: block;
+      margin: 60px 0px;
+      line-height: 20px;
+
+  }
+  #check:checked ~ ul{
+      left:0;
+  }
+}
+
+
+.max-width{
+  padding: 150px;
+}
+
+.home{
+      position: relative;
+  display: flex;
+  height: 100vh;
+  color: black;
+  min-height: 500px;
+      align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.home .home-content .text-1{
+  font-size: 27px;
+}
+
+.home .home-content .text-2{
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+      color: crimson;
+}
+
+.home .home-content .text-3{
+  font-size: 40px;
+  margin: 5px 0;
+}
+
+.home .home-content .text-3 ins{
+color: crimson;
+}
+
+/*Links copied from Jigar sable Personal website; IMG and hover only*/
+.home .right img{
+  width: 50%;
+margin-left: 15rem;
+  margin-top: 2rem;
+border-radius: 50%;
+box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+cursor:  pointer;
+}
+
+.home .right img:hover{
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1000px) {
+.about .about-content .right{
+  flex:100%;
+  padding-left: 50px;
+  transform: translateX(-10px);
+}
+
+}
+
+@media (max-width: 1150px){
+  .home .home-content .text-1{
+      font-size: 30px;
+          padding-top: 50px;
+  }
+  .home .home-content .text-2{
+      font-size: 60px;
+      font-weight: 600;
+      margin-left: -3px;
+          color: crimson;
+  }
+
+  .home .home-content .text-3{
+      font-size: 50px;
+      margin: 5px 0;
+  }
+  .max-width{
+      padding: 100px;
+  }
+
+  .home .right img{
+      margin-left: 3rem;
+      width:80%;
+  }
+}
+
+@media (max-width: 900px){
+  .home .home-content .text-1{
+      font-size: 30px;
+          padding-top: 500px;
+  }
+  .home .home-content .text-2{
+      font-size: 60px;
+      font-weight: 600;
+      margin-left: -3px;
+          color: crimson;
+  }
+
+  .home .home-content .text-3{
+      font-size: 50px;
+      margin: 5px 0;
+  }
+.home .right img{
+  width: 100%;
+  margin-left: -15rem;
+  margin-top: -15rem;
+
+}
+}
+
+@media (max-width: 750px){
+  .home .right img{
+      width: 150%;
+      margin-left: -18rem;
+      margin-top: -15rem;
+
+  }
+}
+@media (max-width: 670px){
+  .home .right img{
+      width: 200%;
+      margin-left: -20rem;
+      margin-top: -15rem;
+
+  }
+}
+@media (max-width: 580px){
+  .home .right img{
+      width: 500%;
+      margin-left: -25rem;
+      margin-top: -15rem;
+
+  }
+}
+
+@media (max-width: 540px){
+  .home .right img{
+      width: 1500%;
+      margin-left: -26rem;
+      margin-top: -15rem;
+
+  }
+}
+
+

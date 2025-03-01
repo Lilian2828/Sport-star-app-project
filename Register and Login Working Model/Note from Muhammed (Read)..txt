@@ -1,0 +1,14 @@
+Hi you must've opened this note.
+
+It's kinda important.
+
+Any modification you do to this Login Regsiter, make sure you create a seperate copy of the register so we can have different drafts of the work.
+
+I would've most likely sent this to you, if you are trying to implement/modify the code to work with our
+sports starts website.
+
+In other words, good luck with the development!
+
+P.S (Dont include this letter with your drafts). 
+
+;) 

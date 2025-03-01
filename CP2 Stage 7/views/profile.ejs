@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel='stylesheet' href='/styleSheets/profile.css' />
+</head>
+
+<body>
+  <div class="line"></div>
+  <!-- navigation Bar-->
+  <div class="nav">
+    <ul>
+      <li><a href="dashboard">Dashboard</a></li>
+      <li><a href="./sap">Search For Athlete</a></li>
+      <li><a href="/home/logout">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <% if(data[0].type=="coach" ){ %>
+      <%include profileCoach.ejs%>
+        <% }else {%>
+          <div class="content">
+            <!--Profile Picture-->
+            <div class="top">
+              <!--Display the image if the profile_image exists
+          "../upload/<%data[0].profile_image%>"-->
+              <% if(data[0].profile_image !="" ){ %>
+                <img src="../upload/<%=data[0].profile_image %>" alt="User Profile">
+                <% }else{ %>
+                  <img src="../images/user.png" alt="User Profile">
+                  <% } %>
+                    <!--if the profile_image doesnt exists^-->
+                    <form action="/home/profile" method="post" encType="multipart/form-data">
+                      <label>Profile Image</label>
+                      <input class="choosefile" type="file" name="imageFile" accept="image/*" />
+                      <input type="submit" class="button-66" value="Upload">
+                    </form>
+            </div>
+            <!--User Details-->
+            <div class="label-container">
+              <div class="image-container"><img src="../images/nameIcon.png" alt="full name icon"></div>
+              <div class="text-container">
+                <label>Full Name</label>
+                <h3>
+                  <%=data[0].first_name%>
+                    <%=data[0].last_name%>
+                </h3>
+              </div>
+            </div>
+            <div class="label-container">
+              <div class="image-container"><img src="../images/sportIcon.png" alt="sport icon"></div>
+              <div class="text-container">
+                <label>Sport</label>
+                <h3>
+                  <%=data[0].sport%>
+                </h3>
+              </div>
+            </div>
+            <div class="label-container">
+              <div class="image-container"><img src="../images/universityIcon.png" alt="uni icon"></div>
+              <div class="text-container">
+                <label>University/Sport Club</label>
+                <h3>
+                  <%=data[0].education%>
+                </h3>
+              </div>
+            </div>
+            <div class="label-container">
+              <div class="image-container"><img src="../images/countryIcon.png" alt="country icon"></div>
+              <div class="text-container">
+                <label>Country</label>
+                <h3>
+                  <%=data[0].country%>
+                </h3>
+              </div>
+            </div>
+            <div class="label-container">
+              <div class="image-container"><img src="../images/ageIcon.png" alt="age icon"></div>
+              <div class="text-container">
+                <label>Age</label>
+                <h3>
+                  <%=data[0].age%>
+                </h3>
+              </div>
+            </div>
+            <div class="label-container">
+              <div class="image-container"><img src="../images/genderIcon.png" alt="gender icon"></div>
+              <div class="text-container">
+                <label>Gender</label>
+                <h3>
+                  <%=data[0].gender%>
+                </h3>
+              </div>
+            </div>
+            <div class="label-container">
+              <div class="image-container"><img src="../images/emailIcon.png" alt="email icon"></div>
+              <div class="text-container">
+                <label>Email</label>
+                <h3>
+                  <%=data[0].email%>
+                </h3>
+              </div>
+            </div>
+            <div class="label-container">
+              <div class="image-container"><img src="../images/phoneIcon.png" alt="phone icon"></div>
+              <div class="text-container">
+                <label>Phone</label>
+                <h3>
+                  <%=data[0].mob_no%>
+                </h3>
+              </div>
+            </div>
+            <form action="/home/profile" method="post" encType="multipart/form-data">
+              <label>Highlight Video</label>
+              <input class="chooseVideoFile" type="file" name="videoFile" accept="video" />
+              <input type="submit" class="button-66" value="Upload">
+            </form>
+            <% if(data[0].profile_video !="" ){ %>
+              <video src="../upload/<%=data[0].profile_video %>" controls></video>
+              <% } %>
+          </div>
+          <!--If the type is coach then display the coaches data-->
+          <% }%>
+  </div>
+</body>
+
+</html>

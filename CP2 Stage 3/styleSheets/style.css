@@ -1,0 +1,782 @@
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+  /* primary/main colors*/
+  --clr-primary-1: #247fff;
+  --clr-primary-2: #ffa600;
+  /* darker shades of primary colours*/
+  --clr-secondary-1: #006fb9;
+  --clr-secondary-4: #cc8400;
+  /*grey, white and black */
+  --clr-grey-1: #f5f5f5;
+  --clr-grey-2: #424242;
+  --clr-white: #fff;
+  --clr-black: #222;
+  /*other*/
+  --line: linear-gradient(to bottom, transparent 2px, #eaf0f6 1px, #eaf0f6 2px, transparent 3px);
+  --light-shadow: 0px 4px #eaf0f6; 
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --max-width: 100%;
+
+
+  /*Media Query stuff*/
+  /*navbar height (using the logo's margin-bottom)*/
+  --logo-height: 20px;
+  --navbar-links-size: 1.5rem;
+  --line-under-links-size: -10px;
+
+  /*slide show*/
+  --buttons-position: -400px;
+  --button-height: 280px;
+  --font-inside-button: 1.2rem;
+
+  /*video part*/
+  --video-part-header: 1.8rem;
+  --padding-on-sides: 20px;
+
+  /*case study*/
+  --case-study-height: 40rem;
+
+  /*footer size*/
+  --footer-max-size: 200px;
+
+
+}
+
+/*
+=============== 
+Initial styling
+===============
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica, Tahoma, Arial, sans-serif;
+}
+
+body {
+  position: relative;
+  text-align: center;
+  background-color: var(--clr-white);
+}
+
+h1{
+  font-size: 1.5rem;
+  color: var(--clr-secondary-1);
+}
+
+h2{
+  color: var(--clr-primary-1);
+  font-size: 1.8rem;
+  padding: 20px;
+}
+
+h3{
+  color: var(--clr-black);
+  font-size: 1.3rem;
+}
+
+p{
+  font-size: 1.1rem;
+}
+
+
+
+/*
+=============== 
+NavBar
+===============
+*/
+/*Navigation bar Styling*/
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-white);
+  box-shadow: var(--light-shadow);
+  transition: transform 1s;
+}
+
+
+/*logo styling for the image*/
+.logo img{
+  margin-bottom: var(--logo-height);
+  width: 25%;
+  opacity: 0.9;
+  transition: transform 5s;
+}
+
+/*when the user hovers over the image its background colour changes*/
+.logo img:hover{
+  animation: color 1s ease-in-out;
+  background-color: var(--clr-primary-2);
+}
+
+/*animation for image logo*/
+@keyframes color {
+  0% {
+    background-color: rgb(255, 255, 255);
+  }
+  25% {
+    background-color: rgb(255, 166, 0);
+  }
+  50% {
+    background-color: rgb(255, 166, 0);
+  }
+  75% {
+    background-color: rgb(255, 166, 0);
+  }
+}
+
+/*Nav bar conent styling*/
+
+.nav ul{
+  display: flex;
+  justify-content: space-evenly;
+  width: 65%;
+}
+
+.nav ul li{list-style: none;}/*list styling*/
+
+.nav ul li a{
+  height: 100%;
+  color:var(--clr-primary-1);
+  text-decoration: none;
+  font-size: var(--navbar-links-size);
+  font-weight:bolder;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  position: relative;
+}
+
+
+.nav ul li a:after{
+  content: "";
+  position: absolute;
+  background-color: var(--clr-primary-2);
+  height: 2px;
+  width: 0%;
+  left: 0%;
+  bottom: var(--line-under-links-size);
+  transition: 0.3s;
+  padding: 0;
+}
+/*draws an underline under the navbar*/
+.nav ul li a:hover:after{
+  width: 100%;
+}
+
+/*just a line added to make the page look better*/
+.line{
+  width: 100%;
+  height: 5px;
+  background: var(--line)
+}
+
+/*Additional code to the nav-bar*/
+.hamburger-menu {
+  position: absolute;
+  top: 4.5rem;
+  right: 1.5rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50px;
+  height: 25px;
+}
+
+.hamburger-menu .bar {
+  height: 5px;
+  width: 100%;
+  background-color: var(--clr-primary-1);
+  border-radius: 10px;
+}
+
+
+
+
+
+
+/*
+=============== 
+Header and Footer
+===============
+*/
+/*headeer and footer styling*/
+.header{
+  height: 2rem;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--footer-max-size);
+  background-color: var(--clr-grey-1);
+  text-align: center;
+}
+
+.footer h1{
+  text-transform: uppercase;
+  color: var(--clr-grey-2);
+}
+
+.footer img{
+  margin: 20px;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+
+
+
+/*
+=============== 
+Image Slide Show
+===============
+*/
+/*Image Slideshow styling */
+.slide {
+  display: none;
+}
+.slide img{
+  max-width: var(--max-width);
+  opacity: 0.9;
+}
+
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+/*Fading animation*/
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/*buttons on top of the slide show
+Their container
+*/
+.main-page-buttons{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+}
+/*the 2 button containers*/
+.register-div-athlete, .register-div-coach{
+  text-align: center;
+  justify-content: space-evenly;
+  position: relative;
+  top: var(--buttons-position);
+  width: 25%;
+  height: var(--button-height);
+  padding: 40px;
+  background-color: var(--clr-white);
+}
+.register-div-coach {
+  background-color: var(--clr-secondary-1);
+}
+
+/*h1 tag for the buttons*/
+.register-div-athlete h1, .register-div-coach h1{
+  line-height: 1.18em;
+  margin-bottom: 10px;
+}
+.register-div-coach h1{
+  color: var(--clr-white);
+}
+
+/* CSS For the button retrieved from https: //getcssscan.com/css-buttons-examples*/
+.button-27, .button-28 {
+  appearance: none;
+  background-color: var(--clr-black);
+  border: 2px solid #1A1A1A;
+  border-radius: 35px;
+  box-sizing: border-box;
+  color: var(--clr-white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: var(--font-inside-button);
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 8px;
+  min-height: 100px;
+  min-width: 0;
+  outline: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+.button-28 {
+  color: var(--clr-primary-1);
+  background-color: var(--clr-white);
+}
+
+/*changes the state of the buttons*/
+.button-27:disabled, .button-28:disabled{
+  pointer-events: none;
+}
+.button-27:hover, .button-28:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+.button-27:active, .button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+
+/*
+===========
+Video Part
+===========
+*/
+/*Adding a video with some text*/
+.video-part{
+  position: relative;
+  display: flex;
+  top: -350px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 100px;
+  text-align: justify;
+}
+.video-part video {
+  margin-right: var(--padding-on-sides);
+  width: 55%;
+  height: 100%;
+}
+
+.video-part-text{
+  margin-right: var(--padding-on-sides);
+}
+.video-part h1{
+  font-size: var(--video-part-header);
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--clr-secondary-1);
+}
+.video-part p{
+  padding-left: var(--padding-on-sides);
+  color: var(--clr-black);
+}
+
+
+
+
+/*
+=============== 
+Case Study Part
+===============
+*/
+/*Case study:*/
+.case-study{
+  position: relative;
+  top: -350px;
+}
+.case-study h1{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.steps{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.step{
+  padding: 25px;
+  border-radius: 15px;
+  width: 27%;
+  height: var(--case-study-height);
+  background-color: var(--clr-grey-1);
+}
+
+.step img{
+  width: 40%;
+  margin: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+
+ 
+/*media query for Laptop Screen Sizes*/
+@media (min-width:768px) and (max-width: 992px){
+  h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    color: var(--clr-primary-1);
+    font-size: 0.9rem;
+  }
+
+  h3 {
+    color: var(--clr-black);
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 0.6rem;
+  }
+
+  /*navbar*/
+  .nav ul li a {
+    font-size: 1.2rem;
+  }
+  .logo img {
+    margin-bottom: var(--logo-height);
+    width: 20%;
+    opacity: 0.9;
+    transition: transform 5s;
+  }
+
+
+  /*Slide Show*/
+  .register-div-athlete h1, .register-div-coach h1{
+    font-size: 0.8rem;
+    height: 32px;
+  }
+  .register-div-athlete, .register-div-coach{
+    height: 200px;
+    width: 24%;
+    top: -250px;
+  }
+
+  .button-27,.button-28{
+    font-size: 0.8rem;
+    padding: 0px;
+    min-height: 60%;
+    border-radius: 25px;
+  }
+
+
+  /*video-part*/
+  .video-part{
+    top: -250px;
+  }
+  .video-part h1{
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  /*case study*/
+  .case-study{
+    top: -250px;
+  }
+
+  /**/
+  .step{
+    height: 22rem;
+  }
+  .step img{
+    margin:0;
+  }
+
+  .footer{
+    min-height: 120px;
+  }
+  .footer img{
+    max-height: 70px;
+  }
+}
+
+/*media query for Table Screen Sizes*/
+@media (min-width:601px) and (max-width: 767px) {
+
+  /*NavBar*/
+  body{
+    text-align: left;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  /*logo stlying*/
+  .logo {
+    position: relative;
+    width: 100%;
+    justify-content: left;
+  }
+
+  .logo a {
+    padding: 0rem;
+    min-width: 0;
+  }
+
+  .logo img {
+    margin: 20px;
+    min-width: 25px;
+    width: 50px
+  }
+
+  /*font size*/
+  .nav ul li a {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /*styling for the links*/
+  .nav ul li {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    margin: 2px;
+  }
+
+  .nav ul li:hover {
+    background-color: var(--clr-grey-1);
+  }
+
+  /*removes orange underline*/
+  .nav ul li a:hover:after {
+    width: 0;
+  }
+
+  .nav ul.active {
+    display: flex;
+  }
+
+
+  /*Slide Show*/
+  .main-page-buttons{
+    flex-direction: column;
+  }
+  
+  .register-div-athlete, .register-div-coach{
+    top: 0;
+    width: 100%;
+  }
+
+
+  /*Video part*/
+  .video-part{
+    top: 0;
+    flex-direction: column;
+  }
+  .video-part video{
+    position: relative;
+    top: -100px;
+    width: 100%;
+    margin: 0px;
+    margin-top: 20px;
+  }
+
+  .video-part-text{
+    top: -100px;
+  }
+
+
+  /*Case study*/
+  .case-study{
+    top: 0px
+  }
+  .case-study h1{
+    text-align: center;
+  }
+  .step{
+    text-align: center;
+    padding: 15px;
+    height: 24rem;
+  }
+  .step p{
+    font-size: 0.8rem;
+  }
+  .step h2{
+    font-size: 1.2rem;
+  }
+  .step h3{
+    font-size: 1rem;
+  }
+  .step img{
+    margin: 0px;
+  }
+
+  /*footer*/
+  .footer{
+    margin-top: 50px;
+    min-height: 65px;
+  }
+  .footer img{
+    max-width: 45px;
+  }
+}
+
+
+
+/*Adding Media Querie For Phone Screens*/
+@media (max-width: 600px) {
+  /*NavBar*/
+  body {
+    text-align: left;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  /*logo stlying*/
+  .logo {
+    position: relative;
+    width: 100%;
+    justify-content: left;
+  }
+
+  .logo a {
+    padding: 0rem;
+    min-width: 0;
+  }
+
+  .logo img {
+    margin: 20px;
+    min-width: 25px;
+    width: 50px
+  }
+
+  /*font size*/
+  .nav ul li a {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /*styling for the links*/
+  .nav ul li {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    margin: 2px;
+  }
+
+  .nav ul li:hover {
+    background-color: var(--clr-grey-1);
+  }
+
+  /*removes orange underline*/
+  .nav ul li a:hover:after {
+    width: 0;
+  }
+
+  .nav ul.active {
+    display: flex;
+  }
+
+
+  /*Slide Show*/
+  .main-page-buttons {
+    flex-direction: column;
+  }
+
+  .register-div-athlete,
+  .register-div-coach {
+    top: 0;
+    width: 100%;
+    height: 220px;
+  }
+
+
+  /*Video part*/
+  .video-part {
+    top: 0;
+    flex-direction: column;
+  }
+
+  .video-part video {
+    position: relative;
+    top: -100px;
+    width: 100%;
+    margin: 0px;
+    margin-top: 20px;
+  }
+
+  .video-part-text {
+    top: -100px;
+  }
+
+
+  /*Case study*/
+  .case-study {
+    top: 0px
+  }
+
+  .case-study h1 {
+    text-align: center;
+  }
+
+  .step {
+    text-align: center;
+    padding: 15px;
+    height: 20rem;
+  }
+
+  .step p {
+    font-size: 0.6rem;
+  }
+
+  .step h2 {
+    font-size: 1rem;
+  }
+
+  .step h3 {
+    font-size: 0.8rem;
+  }
+
+  .step img {
+    margin: 0px;
+  }
+
+  /*footer*/
+  .footer {
+    margin-top: 50px;
+    min-height: 50px;
+  }
+
+  .footer img {
+    max-width: 35px;
+  }
+
+}

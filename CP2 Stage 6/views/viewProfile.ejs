@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%=data[0].first_name%> 'profile
+    </title>
+    <link rel='stylesheet' href='/styleSheets/profile.css' />
+</head>
+
+<body>
+    <div class="line"></div>
+    <!-- navigation Bar-->
+    <div class="nav">
+        <ul>
+            <li><a href="dashboard">Dashboard</a></li>
+            <li><a href="./sap">Search For Athlete</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="top">
+                <!--Display the image if the profile_image exists-->
+                <% if(data[0].profile_image !="" ){ %>
+                    <img src="../upload/<%=data[0].profile_image %>" alt="User Profile">
+                    <% }else{ %>
+                        <img src="../images/user.png" alt="User Profile">
+                        <% } %>
+            </div>
+            <!--User Details-->
+            <div class="label-container">
+                <div class="image-container"><img src="../images/nameIcon.png"></div>
+                <div class="text-container">
+                    <label>Full Name</label>
+                    <h3>
+                        <%=data[0].first_name%>
+                            <%=data[0].last_name%>
+                    </h3>
+                </div>
+            </div>
+            <div class="label-container">
+                <div class="image-container"><img src="../images/sportIcon.png"></div>
+                <div class="text-container">
+                    <label>Sport</label>
+                    <h3>
+                        <%=data[0].sport%>
+                    </h3>
+                </div>
+            </div>
+            <div class="label-container">
+                <div class="image-container"><img src="../images/universityIcon.png"></div>
+                <div class="text-container">
+                    <label>Current Academic Institute</label>
+                    <h3>
+                        <%=data[0].education%>
+                    </h3>
+                </div>
+            </div>
+            <div class="label-container">
+                <div class="image-container"><img src="../images/countryIcon.png"></div>
+                <div class="text-container">
+                    <label>Country</label>
+                    <h3>
+                        <%=data[0].country%>
+                    </h3>
+                </div>
+            </div>
+            <div class="label-container">
+                <div class="image-container"><img src="../images/ageIcon.png"></div>
+                <div class="text-container">
+                    <label>Age</label>
+                    <h3>
+                        <%=data[0].age%>
+                    </h3>
+                </div>
+            </div>
+            <div class="label-container">
+                <div class="image-container"><img src="../images/genderIcon.png"></div>
+                <div class="text-container">
+                    <label>Gender</label>
+                    <h3>
+                        <%=data[0].gender%>
+                    </h3>
+                </div>
+            </div>
+            <div class="label-container">
+                <div class="image-container"><img src="../images/emailIcon.png"></div>
+                <div class="text-container">
+                    <label>Email</label>
+                    <h3>
+                        <%=data[0].email%>
+                    </h3>
+                </div>
+            </div>
+            <div class="label-container">
+                <div class="image-container"><img src="../images/phoneIcon.png"></div>
+                <div class="text-container">
+                    <label>Phone</label>
+                    <h3>
+                        <%=data[0].mob_no%>
+                    </h3>
+                </div>
+            </div>
+            <% if(data[0].profile_video !="" ){ %>
+                <video src="../upload/<%=data[0].profile_video %>" controls></video>
+                <% } %>
+        </div>
+    </div>
+</body>

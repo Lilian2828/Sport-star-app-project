@@ -1,0 +1,223 @@
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+    /* primary/main colors*/
+    --clr-primary-1: #247fff;
+    --clr-primary-2: #ffa600;
+    /* darker shades of primary colours*/
+    --clr-secondary-1: #006fb9;
+    --clr-secondary-4: #cc8400;
+    /*grey, white and black */
+    --clr-grey-1: #f5f5f5;
+    --clr-grey-2: #424242;
+    --clr-white: #fff;
+    --clr-black: #222;
+    /*other*/
+    --line: linear-gradient(to bottom, transparent 2px, #eaf0f6 1px, #eaf0f6 2px, transparent 3px);
+    --light-shadow: 0px 4px #eaf0f6;
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    --max-width: 100%;
+
+
+    /*Media Query stuff*/
+    /*navbar height (using the logo's margin-bottom)*/
+    --logo-height: 20px;
+    --navbar-links-size: 1.5rem;
+    --line-under-links-size: -10px;
+
+    /*label colour*/
+    --label: #d9edf7;
+}
+
+/*
+=============== 
+Initial styling
+===============
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica, Tahoma, Arial, sans-serif;
+}
+
+body {
+    position: relative;
+    background-color: var(--clr-white);
+}
+
+h2 {
+    color: var(--clr-primary-1);
+    font-size: 1.6rem;
+}
+
+h3 {
+    color: var(--clr-black);
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+/*
+=============== 
+NavBar
+===============
+*/
+/*Navigation bar Styling*/
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-white);
+    box-shadow: var(--light-shadow);
+    height: 80px;
+    margin-bottom: 50px;
+}
+
+/*Nav bar conent styling*/
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+/*list styling*/
+.nav ul li a {
+    height: 100%;
+    color: var(--clr-primary-1);
+    text-decoration: none;
+    font-size: var(--navbar-links-size);
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+}
+
+/*
+=============== 
+Page Itself
+===============
+*/
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.content{
+    display: inline-block;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    width: auto;
+}
+
+/*styling for the top of the profile page*/
+.top{
+    margin-top: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+.top img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+/*styling for the page's content*/
+.label-container{
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 400px;
+}
+.image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+    
+}
+.image-container img{
+    margin-top: 20px;
+    max-width: 32px;
+    max-height: 32px;
+}
+.text-container{
+    position: relative;
+    top: 50%;
+    text-align: left;
+    align-items: center;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    color: var(--clr-secondary-1);
+    padding-top: 7px;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.choosefile{
+    margin-top: 20px;
+    position: relative;
+    left: 50px;
+}
+
+.chooseVideoFile{
+    position: relative;
+    margin-top: 20px;
+}
+
+.button-66 {
+    background-color: var(--clr-primary-1);
+    border-radius: 8px;
+    border: 0;
+    box-shadow: rgba(1, 60, 136, .5) 0 -1px 3px 0 inset, rgba(0, 44, 97, .1) 0 3px 6px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inherit;
+    font-family: "Space Grotesk", -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-top: 7vh;
+    min-height: 56px;
+    min-width: 120px;
+    padding: 16px 20px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+.button-66:hover {
+    background-color: var(--clr-secondary-1);
+    transform: translateY(-2px);
+}
+video{
+    position: relative;
+    width: 400px;
+    height: 400px;
+}

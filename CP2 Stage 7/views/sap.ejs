@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Search For Athlete</title>
+  <link rel="stylesheet" type="text/css" href="../styleSheets/sap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="header"></div>
+  <div class="line"></div>
+  <!-- navigation Bar-->
+  <div class="nav">
+    <div class="logo">
+      <a href="/"><img src="../images/Logo.png" alt="SLIGH | My Future"></a>
+    </div>
+    <a href="#" class="hamburger-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="dashboard">Dashboard</a></li>
+      <li><a href="./sap">Search For Athlete</a></li>
+      <!-- <<li><a href="/home/sap">SAP</a></li>doesn't work> -->
+      <li><a href="/home/profile">My Profile</a></li>
+    </ul>
+  </div>
+  <!--Page Content-->
+  <h1>Search For An Athlete</h1>
+  <!--search form-->
+  <form class="form-horizontal" role="form" method="POST" action="/home/sap">
+    <div class="search-bar">
+      <input type="text" placeholder="Enter an athlete's name..." name="searched">
+      <img src="../images/searchIcon.png" alt="SLIGH">
+      <input id="back" type="submit" value=""></input>
+    </div>
+  </form>
+  <% if (message !="" ) { %>
+    <% for(var i=0; i < message.length; i++){ %>
+      <div class="display-profile"><a href="/home/view?viewId=<%=message[i].id%>">
+          <%if(message[i].profile_image=='' ){%>
+            <img src="../images/user.png" alt="default">
+            <%}else{ %>
+              <img src="../upload/<%=message[i].profile_image%>" alt="User Profile">
+              <%}%>
+                <h4>
+                  <%=message[i].first_name%>
+                    <%=message[i].last_name%>
+                </h4>
+                <h4>
+                  <%=message[i].sport%>
+                </h4>
+        </a>
+      </div>
+      <% } %>
+        <%}%>
+</body>
+
+
+<!--Footer-->
+<div class="footer">
+  <h1>Connect With Us:</h1>
+  <a href="https://m.facebook.com/profile.php?id=100089914065183&_rdr"><img src="../images/facebook.png"
+      alt="facebook link"></a>
+  <a href="https://twitter.com/SportStarz10"><img src="../images/twitter.png" alt="twitter link"></a>
+  <a href="https://www.instagram.com/sportstarz._/"><img src="../images/instagram.png" alt="instagram link"></a>
+</div>
+<!--path to JavaScript file-->
+<script type="text/javascript" src="../JavaScript/sap.js"></script>
+
+</html>
