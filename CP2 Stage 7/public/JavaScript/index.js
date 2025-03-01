@@ -11,7 +11,7 @@ hamburgerButton.addEventListener('click', ()=>{
 let slideIndex = 0;
 function showSlides() {
   let i;
-  //create variables to access the html classes
+  //create variables to access the html clases
   let slides = document.getElementsByClassName("slide");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
